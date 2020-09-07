@@ -34,3 +34,53 @@
     padding: 30px;
     /* overflow: scroll; */
 }
+
+.chatMessage {
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+} 
+
+.chatName {
+    position: absolute;
+    top: -15px;
+    font-weight: 800;
+    font-size: xx-small;
+}
+
+.chatTimestamp {
+    margin-left: 10px;
+    font-size: xx-small;
+}
+.chatReciever {
+    margin-left: auto;
+    background-color: #dcf8c6;
+}
+.chatFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 62px;
+    border-top: 1px solid lightgray;
+}
+.chatFooter > form {
+    flex: 1;
+    display: flex;
+}
+.chatFooter > form > input {
+    flex: 1;
+    border-radius: 30px;
+    padding: 10px;
+    border: none;
+}
+.chatFooter > form > input:hover {
+    border: none;
+}
+
+.chatFooter > form > button {
+    display: none;
+}
