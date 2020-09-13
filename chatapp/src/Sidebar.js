@@ -7,9 +7,11 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchOutlined from "@material-ui/icons/SearchOutlined";
 import SidebarChat from "./SidebarChat"
 import db from './firebase';
+import { useStateValue } from './StateProvider';
 function Sidebar() {
     const [seed, setSeed] = useState('');
     const [rooms, setRooms] = useState([]);
+    const [{user} , dispatch] = useStateValue();
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000));
         const unsubscribe = db.collection('rooms').onSnapshot((snapshot) => setRooms(snapshot.docs.map((doc) => ({
@@ -23,7 +25,7 @@ function Sidebar() {
     return (
         <div className="sidebar">
             <div className="sidebarHeader">
-                <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
+                <Avatar src={user?.photoURL}/>
                 <div className="sidenarHeaderRight">
                     <IconButton>
                         <DonutLargeIcon />
